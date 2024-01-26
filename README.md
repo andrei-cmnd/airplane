@@ -2,9 +2,11 @@
 The project represents the dockerized web app that receives a JSON containing the list of passengers and returns the airplaine layout.
 
 ## How to run it
-Start the project!
+Start the project! 
+Go to the swaager ui,
 
 Perform a post with a json int the following format:
+
 "type": 0 means Adult, "type": 1 means: Enfant
 
 ```javascript
