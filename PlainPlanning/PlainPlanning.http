@@ -1,0 +1,6 @@
+@PlainPlanning_HostAddress = http://localhost:5084
+
+GET {{PlainPlanning_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
