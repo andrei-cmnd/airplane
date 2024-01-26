@@ -1,6 +1,4 @@
-﻿using PlanePlanning.Extensions;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
+﻿using System.Diagnostics.CodeAnalysis;
 
 namespace PlanePlanning.Models
 {

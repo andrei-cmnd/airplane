@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace PlanePlanning.Models
+﻿namespace PlanePlanning.Models
 {
     public class Row
     {

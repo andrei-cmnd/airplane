@@ -1,6 +1,4 @@
-﻿using System.Xml.Linq;
-
-namespace PlanePlanning.Models
+﻿namespace PlanePlanning.Models
 {
     public class Passenger
     {

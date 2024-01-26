@@ -1,13 +1,6 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using PlanePlanning.Extensions;
-using PlanePlanning.Interfaces;
+﻿using PlanePlanning.Interfaces;
 using PlanePlanning.Models;
 using System.ComponentModel.DataAnnotations;
-using System.Net.Http;
-using System.Numerics;
-using System.Text.RegularExpressions;
-using System.Xml.Linq;
 
 namespace PlanePlanning.Services
 {
@@ -75,8 +68,8 @@ namespace PlanePlanning.Services
             var others = family.getNotInGroups();
 
 
-            Console.WriteLine("LeftGroup: " + string.Join("|", addPadding(group1.ToArray<string>())) + "   RightGroup: " + string.Join("|", addPadding(group2.ToArray<string>()))
-                + "   Others: " + string.Join("|", addPadding(others.ToArray<string>())));
+            //Console.WriteLine("LeftGroup: " + string.Join("|", addPadding(group1.ToArray<string>())) + "   RightGroup: " + string.Join("|", addPadding(group2.ToArray<string>()))
+            //    + "   Others: " + string.Join("|", addPadding(others.ToArray<string>())));
 
             for (int i = 0; i < airplane.rows.Length; i++)
             {
@@ -108,8 +101,6 @@ namespace PlanePlanning.Services
         {
             int requiredPlacesGroup1 = group1.Count;
             int requiredPlacesGroup2 = group2.Count;
-
-            Console.WriteLine("We have 2 mandatory groups");
 
             // we do not have enough free seats on this pair of rows
             if (currentRow.getFreeSeats() + nextRow.getFreeSeats() < group1.Count + group2.Count + others.Count)
@@ -183,11 +174,8 @@ namespace PlanePlanning.Services
             return placed;
         }
 
-
         private bool placeGroups(Row currentRow, Row nextRow, List<string> group, List<string> others)
         {
-            Console.WriteLine("We have 1 mandatory group");
-
             // we do not have enough free seats on this pair of rows
             if (currentRow.getFreeSeats() + nextRow.getFreeSeats() < group.Count + others.Count)
             {
@@ -216,7 +204,6 @@ namespace PlanePlanning.Services
 
         private bool placeAnyWhereOnRows(Row firstRow, Row secondRow, List<string> others)
         {
-            Console.WriteLine("We have others");
 
             if ( firstRow.getFreeSeats() + secondRow.getFreeSeats() >= others.Count)
             {
@@ -244,7 +231,6 @@ namespace PlanePlanning.Services
             }
    
         }
-
 
     }
 }
